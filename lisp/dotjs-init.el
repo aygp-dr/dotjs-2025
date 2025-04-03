@@ -14,6 +14,7 @@
 (add-to-list 'load-path (file-name-directory load-file-name))
 
 ;; Load project files
+(require 'config)
 (require 'generate-templates)
 (require 'org-capture-templates)
 
