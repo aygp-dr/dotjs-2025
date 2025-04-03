@@ -17,6 +17,8 @@ This repository contains personal notes, resources, and code examples from the d
 - =resources/= - Slides, references, and bibliography
 - =diagrams/= - Visual representations of concepts
 - =lisp/= - Emacs Lisp utilities for working with the repository
+- =scripts/= - Helper scripts for tasks that are too complex for the Makefile
+- =Makefile= - Simple commands for common tasks (tangle, detangle, export)
 
 ** Environment Setup
 
@@ -68,8 +70,32 @@ poetry install  # This will install all dependencies from the lockfile
 
 3. Explore the talk notes in the =talks/= directory
 
-4. Use Emacs Org-mode commands for working with content:
+4. Manage content using either the Makefile or Emacs commands:
 
+   *** Using Makefile (from command line)
+   
+   #+BEGIN_SRC shell
+   # List all available commands
+   make
+   
+   # Tangle code from all Org files
+   make tangle
+   
+   # Detangle (sync code back to Org files)
+   make detangle
+   
+   # Generate HTML documentation
+   make html
+   
+   # Generate PDF documentation
+   make pdf
+   
+   # Clean generated files
+   make clean
+   #+END_SRC
+   
+   *** Using Emacs Org-mode (within editor)
+   
    #+BEGIN_SRC text
    # In Emacs, with an .org file open:
    
