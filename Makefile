@@ -38,4 +38,7 @@ lint-py: ## Lint Python files
 lint-sh: ## Lint shell scripts
 	@./scripts/lint-shell.sh
 
-.PHONY: help tangle detangle clean html pdf lint lint-org lint-el lint-py lint-sh
+setup-python: ## Set up Python environment with Poetry or pip
+	@./scripts/setup-python.sh
+
+.PHONY: help tangle detangle clean html pdf lint lint-org lint-el lint-py lint-sh setup-python
