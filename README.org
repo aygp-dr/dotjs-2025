@@ -59,7 +59,7 @@ poetry install  # This will install all dependencies from the lockfile
 
 1. Clone this repository:
    #+BEGIN_SRC shell
-   git clone https://github.com/yourusername/dotjs-2025.git
+   git clone https://github.com/aygp-dr/dotjs-2025.git
    cd dotjs-2025
    #+END_SRC
 
