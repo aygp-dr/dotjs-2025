@@ -40,10 +40,15 @@ generate_templates() {
     fi
 }
 
-# Create empty bibliography file
+# Create bibliography file if it doesn't exist
 create_bibliography() {
-    echo "Creating bibliography file..."
-    cat > resources/bibliography/references.bib << EOF
+    local bib_file="resources/bibliography/references.bib"
+    
+    if [ -f "$bib_file" ]; then
+        echo "Bibliography file already exists at $bib_file (skipping)"
+    else
+        echo "Creating bibliography file..."
+        cat > "$bib_file" << EOF
 @book{crockford2008javascript,
   title={JavaScript: The Good Parts},
   author={Crockford, Douglas},
@@ -66,7 +71,8 @@ create_bibliography() {
   urldate = {2025-04-01}
 }
 EOF
-    echo "Bibliography file created at resources/bibliography/references.bib"
+        echo "Bibliography file created at $bib_file"
+    fi
 }
 
 # Main execution

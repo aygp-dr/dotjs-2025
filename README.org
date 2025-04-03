@@ -56,10 +56,11 @@ poetry install  # This will install all dependencies from the lockfile
 
 ** Quick Start
 
-1. Run the setup script to initialize the repository:
+1. Run the setup script *once* to initialize the repository:
    #+BEGIN_SRC shell
    ./scripts/setup.sh
    #+END_SRC
+   This creates the directory structure and basic files. *Only needs to be run once*.
 
 2. Load the Elisp environment in Emacs:
    #+BEGIN_SRC emacs-lisp
@@ -68,9 +69,13 @@ poetry install  # This will install all dependencies from the lockfile
 
 3. Explore the talk notes in the =talks/= directory
 
-4. Use the tangle script to extract code from Org files:
+4. Use specialized scripts for ongoing tasks:
+
    #+BEGIN_SRC shell
-   # Tangle a specific file
+   # Generate new talk templates (if needed)
+   ./scripts/generate-templates.sh
+   
+   # Tangle a specific file (extract code)
    ./scripts/tangle.sh talks/morning-sessions/ryan-dahl-special-announcement.org
    
    # Tangle all Org files
