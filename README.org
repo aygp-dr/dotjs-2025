@@ -17,7 +17,6 @@ This repository contains personal notes, resources, and code examples from the d
 - =resources/= - Slides, references, and bibliography
 - =diagrams/= - Visual representations of concepts
 - =lisp/= - Emacs Lisp utilities for working with the repository
-- =scripts/= - Shell scripts for repository setup and maintenance
 
 ** Environment Setup
 
@@ -69,20 +68,22 @@ poetry install  # This will install all dependencies from the lockfile
 
 3. Explore the talk notes in the =talks/= directory
 
-4. Use these scripts for managing content:
+4. Use Emacs Org-mode commands for working with content:
 
-   #+BEGIN_SRC shell
-   # Generate new talk templates (if needed)
-   ./scripts/generate-templates.sh
+   #+BEGIN_SRC text
+   # In Emacs, with an .org file open:
    
-   # Tangle a specific file (extract code)
-   ./scripts/tangle.sh talks/morning-sessions/ryan-dahl-special-announcement.org
+   # Execute a code block
+   C-c C-c (with cursor in code block)
    
-   # Tangle all Org files
-   ./scripts/tangle.sh --all
+   # Tangle code blocks to source files
+   C-c C-v t
    
-   # Detangle (sync from source back to Org)
-   ./scripts/tangle.sh --detangle talks/morning-sessions/ryan-dahl-special-announcement.org
+   # Export to HTML
+   C-c C-e h h
+   
+   # Export to PDF
+   C-c C-e l p
    #+END_SRC
 
 ** Key Features
