@@ -1,4 +1,4 @@
-;;; generate-templates.el --- Generate org files for dotJS talks
+;;; generate-templates.el --- Generate org files for dotJS talks -*- lexical-binding: t -*-
 
 ;; Author: Aidan Pace <apace@defrecord.com>
 ;; Keywords: org-mode, templates, conference, notes
@@ -10,7 +10,6 @@
 
 ;;; Code:
 
-(require 'config)
 
 ;; Define the talks
 (setq dotjs-talks

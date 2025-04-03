@@ -1,4 +1,4 @@
-;;; org-capture-templates.el --- Org capture templates for dotJS 2025
+;;; org-capture-templates.el --- Org capture templates for dotJS 2025 -*- lexical-binding: t -*-
 
 ;; Author: Aidan Pace <apace@defrecord.com>
 ;; Keywords: org-mode, capture, conference, notes
@@ -11,17 +11,25 @@
 ;;; Code:
 
 (require 'org-capture)
-(require 'config)
 
 (defvar dotjs-capture-templates
   '(("t" "Talk Insight" entry
-     (file+headline (expand-file-name "notes/quick-notes.org" dotjs-project-root) "Conference Insights")
+     (file+headline 
+      (expand-file-name "notes/quick-notes.org" 
+                        (file-name-directory (or (buffer-file-name) default-directory)))
+      "Conference Insights")
      "* %^{Speaker} - %^{Topic} %U\n%?")
     ("c" "Code Snippet" entry
-     (file+headline (expand-file-name "notes/code-snippets.org" dotjs-project-root) "Code Examples")
+     (file+headline 
+      (expand-file-name "notes/code-snippets.org" 
+                        (file-name-directory (or (buffer-file-name) default-directory)))
+      "Code Examples")
      "* %^{Description} %U\n#+BEGIN_SRC javascript\n%?\n#+END_SRC")
     ("q" "Question for Q&A" entry
-     (file+headline (expand-file-name "notes/questions.org" dotjs-project-root) "Questions")
+     (file+headline 
+      (expand-file-name "notes/questions.org" 
+                        (file-name-directory (or (buffer-file-name) default-directory)))
+      "Questions")
      "* %^{For Speaker} - %^{Question} %U\n%?"))
   "Org capture templates for dotJS 2025 conference notes.")
 

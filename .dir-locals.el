@@ -9,10 +9,7 @@
                                                   (let ((d (dir-locals-find-file ".")))
                                                     (if (stringp d) d (car d))))))
                    
-                   ;; Load configuration
-                   (require 'config nil t)
-                   
-                   ;; Set up org mode
+                   ;; Set up org mode when available
                    (with-eval-after-load 'org
                      (org-babel-do-load-languages
                       'org-babel-load-languages
@@ -26,13 +23,20 @@
                      ;; Configure citation
                      (setq org-cite-global-bibliography
                            (list (expand-file-name "resources/bibliography/references.bib"
-                                                  (file-name-directory
-                                                   (let ((d (dir-locals-find-file ".")))
-                                                     (if (stringp d) d (car d))))))
-                     
-                     ;; Capture templates
-                     (with-eval-after-load 'org-capture
-                       (require 'org-capture-templates nil t)))))))
+                                                   (file-name-directory
+                                                    (let ((d (dir-locals-find-file ".")))
+                                                      (if (stringp d) d (car d))))))))
+                   
+                   ;; Load our utilities if possible
+                   (condition-case nil
+                       (require 'config nil t)
+                     (error nil))
+                   
+                   ;; Setup capture templates if org-capture is loaded
+                   (with-eval-after-load 'org-capture
+                     (condition-case nil
+                         (require 'org-capture-templates nil t)
+                       (error nil)))))))
  
  (org-mode . ((org-confirm-babel-evaluate . nil)
               (org-src-fontify-natively . t)

@@ -1,4 +1,4 @@
-;;; export-all-org-files.el --- Export utilities for dotJS 2025
+;;; export-all-org-files.el --- Export utilities for dotJS 2025 -*- lexical-binding: t -*-
 
 ;; Author: Aidan Pace <apace@defrecord.com>
 ;; Keywords: org-mode, export, conference, notes
@@ -11,21 +11,22 @@
 ;;; Code:
 
 (require 'org)
-(require 'config)
 
 (defun export-all-org-files ()
   "Export all org files in the project to HTML."
   (interactive)
-  (dolist (file (directory-files-recursively dotjs-project-root "\\.org$"))
-    (with-current-buffer (find-file-noselect file)
-      (org-html-export-to-html))))
+  (let ((project-root (file-name-directory (or (buffer-file-name) default-directory))))
+    (dolist (file (directory-files-recursively project-root "\\.org$"))
+      (with-current-buffer (find-file-noselect file)
+        (org-html-export-to-html)))))
 
 (defun export-all-org-files-to-pdf ()
   "Export all org files in the project to PDF."
   (interactive)
-  (dolist (file (directory-files-recursively dotjs-project-root "\\.org$"))
-    (with-current-buffer (find-file-noselect file)
-      (org-latex-export-to-pdf))))
+  (let ((project-root (file-name-directory (or (buffer-file-name) default-directory))))
+    (dolist (file (directory-files-recursively project-root "\\.org$"))
+      (with-current-buffer (find-file-noselect file)
+        (org-latex-export-to-pdf)))))
 
 (provide 'export-all-org-files)
 ;;; export-all-org-files.el ends here

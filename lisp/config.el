@@ -1,4 +1,4 @@
-;;; config.el --- Configuration for dotJS 2025 conference
+;;; config.el --- Configuration for dotJS 2025 conference -*- lexical-binding: t -*-
 
 ;; Author: Aidan Pace <apace@defrecord.com>
 ;; Keywords: org-mode, conference, notes
@@ -24,6 +24,7 @@
 (defun dotjs-tangle-file (file)
   "Tangle the specified org FILE."
   (interactive "fOrg file to tangle: ")
+  (require 'org-babel)
   (with-current-buffer (find-file-noselect file)
     (org-babel-tangle)
     (message "Tangled %s" file)))
@@ -31,9 +32,13 @@
 (defun dotjs-detangle-file (file)
   "Detangle the specified org FILE - sync from source back to org file."
   (interactive "fOrg file to detangle: ")
+  (require 'org-babel)
   (with-current-buffer (find-file-noselect file)
-    (org-babel-detangle)
-    (message "Detangled %s" file)))
+    (if (fboundp 'org-babel-detangle)
+        (progn
+          (org-babel-detangle)
+          (message "Detangled %s" file))
+      (message "Warning: org-babel-detangle not available"))))
 
 ;; Provide this module
 (provide 'config)
