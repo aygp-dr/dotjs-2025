@@ -20,92 +20,24 @@ This repository contains personal notes, resources, and code examples from the d
 - =scripts/= - Helper scripts for tasks that are too complex for the Makefile
 - =Makefile= - Simple commands for common tasks (tangle, detangle, export)
 
-** Environment Setup
-
-This repository is designed to work with the following tools:
-
-*** Development Tools
-- Node.js v18+ and npm 9+ (for JavaScript examples)
-- Python 3.11+ (for utilities and analysis)
-- Emacs 31.0.50+ (for Org-mode and literate programming)
-- Guile 3.0.8+ (for Scheme examples)
-- Shellcheck and shfmt (for shell script linting)
-- Mermaid CLI (for diagram generation)
-- ImageMagick (for image processing)
-
+** Environment
 *** Dependencies
 
-This project requires the following tools:
+- Emacs 31.0+ with org-mode
+- Node.js 18.0+
+- Python 3.11+
 
-- *Emacs* (31.0+) with org-mode for document management
-- *Node.js* (18.0+) for JavaScript code execution
-- *Python* (3.11+) for utilities and analysis
-- *Poetry* (2.1+) for Python dependency management
+** Usage
 
-*** Setup
-
-Run the following to prepare your environment:
+Set up the environment:
 
 #+BEGIN_SRC shell
-# Install Python dependencies (recommended)
 make setup-python
-
-# Alternatively, if you prefer using pip directly:
-pip install -r requirements.txt
 #+END_SRC
 
-The project uses standard =make= targets for all operations:
+Run ~make~ or ~make help~ to see all available commands.
 
-#+BEGIN_SRC shell
-# Show all available commands
-make help
-#+END_SRC
-
-** Quick Start
-
-1. Clone this repository:
-   #+BEGIN_SRC shell
-   git clone https://github.com/aygp-dr/dotjs-2025.git
-   cd dotjs-2025
-   #+END_SRC
-
-2. Set up the environment:
-   #+BEGIN_SRC shell
-   # Install Python dependencies
-   make setup-python
-   #+END_SRC
-
-3. Open any file in Emacs and the project settings will be automatically loaded via `.dir-locals.el`.
-
-4. Explore the talk notes in the =talks/= directory
-
-5. Available project operations:
-
-   *** Common Tasks
-   
-   #+BEGIN_SRC shell
-   # Show all available commands
-   make
-   
-   # Export documentation to HTML
-   make html
-   
-   # Check all files for issues
-   make lint
-   #+END_SRC
-   
-   *** Working with Code Blocks
-   
-   #+BEGIN_SRC shell
-   # Extract code blocks from Org files
-   make tangle
-   
-   # Sync code back to Org files
-   make detangle
-   
-   # Remove generated files
-   make clean
-   #+END_SRC
+Open any file in Emacs and the project settings will be automatically loaded via ~.dir-locals.el~.
 
 ** Key Features
 
