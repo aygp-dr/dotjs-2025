@@ -56,11 +56,11 @@ poetry install  # This will install all dependencies from the lockfile
 
 ** Quick Start
 
-1. Run the setup script *once* to initialize the repository:
+1. Clone this repository:
    #+BEGIN_SRC shell
-   ./scripts/setup.sh
+   git clone https://github.com/yourusername/dotjs-2025.git
+   cd dotjs-2025
    #+END_SRC
-   This creates the directory structure and basic files. *Only needs to be run once*.
 
 2. Load the Elisp environment in Emacs:
    #+BEGIN_SRC emacs-lisp
@@ -69,7 +69,7 @@ poetry install  # This will install all dependencies from the lockfile
 
 3. Explore the talk notes in the =talks/= directory
 
-4. Use specialized scripts for ongoing tasks:
+4. Use these scripts for managing content:
 
    #+BEGIN_SRC shell
    # Generate new talk templates (if needed)
