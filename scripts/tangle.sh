@@ -5,17 +5,12 @@ set -e
 
 echo "Tangling code from org files..."
 
-# Find all org files
-ORG_FILES=$(find . -name "*.org" -type f)
-
-if [ -z "$ORG_FILES" ]; then
-  echo "No org files found."
-  exit 0
-fi
-
-# Tangle each file
-emacs --batch --eval "(require 'org)" $ORG_FILES \
-  --eval '(org-babel-tangle)' \
-  --kill
+# Find all org files and process one at a time
+find . -name "*.org" -type f | while read -r file; do
+  echo "Tangling $file..."
+  emacs --batch --eval "(require 'org)" "$file" \
+    --eval '(org-babel-tangle)' \
+    --kill
+done
 
 echo "Tangling complete."

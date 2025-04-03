@@ -16,7 +16,7 @@ fi
 # Detangle each file
 for file in $ORG_FILES; do
   echo "Detangling $file..."
-  emacs --batch --load="$file" \
+  emacs --batch --file "$file" \
     --eval "(require 'org)" \
     --eval "(condition-case nil (org-babel-detangle) (error (message \"Could not detangle %s\" \"$file\")))" \
     --kill

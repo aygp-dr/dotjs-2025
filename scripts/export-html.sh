@@ -5,17 +5,12 @@ set -e
 
 echo "Generating HTML documentation..."
 
-# Find all org files
-ORG_FILES=$(find . -name "*.org" -type f)
-
-if [ -z "$ORG_FILES" ]; then
-  echo "No org files found."
-  exit 0
-fi
-
-# Export each file to HTML
-emacs --batch --eval "(require 'org)" $ORG_FILES \
-  --eval '(org-html-export-to-html)' \
-  --kill
+# Find all org files and process one at a time
+find . -name "*.org" -type f | while read -r file; do
+  echo "Exporting $file to HTML..."
+  emacs --batch --eval "(require 'org)" "$file" \
+    --eval '(org-html-export-to-html)' \
+    --kill
+done
 
 echo "HTML generation complete."

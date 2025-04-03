@@ -8,7 +8,7 @@ echo "Setting up Python environment..."
 # Check if Poetry is available
 if command -v poetry >/dev/null; then
   echo "Using Poetry for dependency management"
-  poetry install
+  poetry install --no-root
 elif command -v pip >/dev/null; then
   echo "Using pip for dependency management"
   pip install -r requirements.txt

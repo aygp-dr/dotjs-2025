@@ -5,22 +5,16 @@ set -e
 
 echo "Linting Emacs Lisp files..."
 
-# Find all Elisp files (relative paths)
-EL_FILES=$(find lisp -name "*.el" -type f)
-
-if [ -z "$EL_FILES" ]; then
-  echo "No Elisp files found."
-  exit 0
-fi
-
-# Run checkdoc and byte-compile on each file
-emacs --batch \
-  --eval "(setq byte-compile-error-on-warn t)" \
-  --eval "(require 'checkdoc)" \
-  --eval "(dolist (file command-line-args-left) 
-           (with-current-buffer (find-file-noselect file) 
-           (checkdoc-current-buffer t) 
-           (byte-compile-file file)))" \
-  $EL_FILES
+# Find all Elisp files and process one at a time
+find lisp -name "*.el" -type f | while read -r file; do
+  echo "Linting $file..."
+  emacs --batch \
+    --eval "(setq byte-compile-error-on-warn t)" \
+    --eval "(require 'checkdoc)" \
+    --eval '(let ((file "'"$file"'"))
+             (with-current-buffer (find-file-noselect file)
+               (checkdoc-current-buffer t)
+               (byte-compile-file file)))'
+done
 
 echo "Emacs Lisp linting complete."

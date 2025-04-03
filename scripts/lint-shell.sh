@@ -15,7 +15,7 @@ fi
 
 # Check if shellcheck is available
 if command -v shellcheck >/dev/null; then
-  shellcheck $SH_FILES
+  find ./scripts -name "*.sh" -type f -exec shellcheck {} \;
 else
   echo "shellcheck not found, skipping shell linting"
   exit 1
