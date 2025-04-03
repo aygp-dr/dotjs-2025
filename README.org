@@ -1,0 +1,26 @@
+#+TITLE: dotJS 2025 Notes
+#+AUTHOR: Your Name
+#+DATE: April 3, 2025
+
+* dotJS 2025 Conference Notes
+
+This repository contains my personal notes, resources, and code examples from the dotJS 2025 conference held on April 3, 2025 at Folies Bergère, 32 rue Richer, 75009 Paris.
+
+** Directory Structure
+
+- talks/ - Notes from conference talks
+- resources/ - Slides, links, and other resources
+- code-examples/ - Code snippets and demos from the talks
+- notes/ - Additional personal notes
+- diagrams/ - Visual representations of concepts
+
+** Getting Started
+
+1. Clone this repository
+2. Explore the talk notes in the talks/ directory
+3. Check out code examples in the code-examples/ directory
+4. View the generated diagrams in the diagrams/ directory
+
+** Conference Highlights
+
+[To be filled after the conference]

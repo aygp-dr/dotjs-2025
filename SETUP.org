@@ -1,0 +1,401 @@
+#+TITLE: dotJS 2025 Conference Notes
+#+AUTHOR: Your Name
+#+DATE: April 3, 2025
+#+PROPERTY: header-args :mkdirp yes
+
+* Repository Structure
+:PROPERTIES:
+:header-args: :tangle ./README.org :mkdirp t
+:END:
+
+This repository contains notes, resources, and code examples from the dotJS 2025 conference held on April 3, 2025, at the Folies Bergère theater in Paris.
+
+** Directory Structure
+#+BEGIN_SRC mermaid :file ./diagrams/repo-structure.svg
+graph TD
+    A[dotjs-2025] --> B[talks]
+    A --> C[resources]
+    A --> D[code-examples]
+    A --> E[notes]
+    A --> F[diagrams]
+    
+    B --> B1[morning-sessions]
+    B --> B2[afternoon-sessions]
+    
+    C --> C1[slides]
+    C --> C2[references]
+    
+    D --> D1[demos]
+    D --> D2[experiments]
+    
+    E --> E1[keynotes]
+    E --> E2[lightning-talks]
+    E --> E3[qa-sessions]
+#+END_SRC
+
+** Setup Instructions
+:PROPERTIES:
+:header-args: :tangle ./setup.org :mkdirp t
+:END:
+
+To set up this repository:
+
+1. Clone the repository
+2. Ensure you have Emacs with org-mode and Babel support
+3. Install Mermaid for diagram rendering
+4. Run the setup script to create the directory structure
+
+#+BEGIN_SRC sh :tangle ./setup.sh :shebang "#!/bin/bash"
+# Create directory structure for dotJS 2025 conference notes
+mkdir -p talks/{morning-sessions,afternoon-sessions}
+mkdir -p resources/{slides,references}
+mkdir -p code-examples/{demos,experiments}
+mkdir -p notes/{keynotes,lightning-talks,qa-sessions}
+mkdir -p diagrams
+
+echo "Repository structure created successfully!"
+#+END_SRC
+
+* Conference Information
+:PROPERTIES:
+:header-args: :tangle ./conference-info.org :mkdirp t
+:END:
+
+#+BEGIN_SRC org
+,#+TITLE: dotJS 2025 Conference Information
+,#+DATE: April 3, 2025
+
+** Venue
+- *Location*: Folies Bergère, 32 rue Richer, 75009 Paris
+- *Date*: April 3, 2025
+
+** Schedule
+- *Doors Open*: 9:00 am (Light breakfast served in the exposition hall)
+- *Morning Talks*: 9:30 am - 12:00 pm
+- *Lunch*: 12:00 pm - 1:45 pm (Buffet lunch served in the exposition hall)
+- *Afternoon Talks*: 1:45 pm - 6:00 pm
+- *Conference Happy Hour*: 6:00 pm - 8:00 pm (Drinks and snacks in the exposition hall)
+
+** Security Information
+- Only backpacks are allowed; suitcases cannot be dropped off at the cloakroom
+- Electric batteries for bicycles and scooters are not permitted inside
+- All bags will be checked upon entry
+
+** Speakers
+*** 20-minute talks:
+- Ryan Dahl – Special Announcement
+- Wes Bos – Running AI models in JavaScript - good idea?
+- Sarah Drasner – The Wind and the Waves: The formation of Framework Waves from the Epicenter
+- Kyle Simpson – Love/Hate: Upgrading to Web2.5 with Local-First
+- Angie Jones – Modern Day Mashups: How AI Agents are Reviving the Programmable Web
+- Matteo Collina – Node.js will use all the memory available, and that's OK!
+- Yohan Lasorsa – Prompting is the New Scripting: Meet GenAIScript
+- Eduardo San Martin Morote – From terrible to terrific frontend routers
+
+*** 10-minute lightning talks:
+- Antoine Caron – Supercharge Web Performance with Shared Dictionaries: The Next Frontier in HTTP Compression
+- Joyce Lin – Code in the Physical World
+- Charly Poly – Durable Executions for Mortals
+- Abbey Perini – Coding and ADHD: Where We Excel
+- Vadim Smirnov – Recreating Windows Media Player Art With Web MIDI API
+#+END_SRC
+
+* Template for Talk Notes
+:PROPERTIES:
+:header-args: :tangle ./templates/talk-template.org :mkdirp t
+:END:
+
+#+BEGIN_SRC org
+,#+TITLE: [Speaker Name] - [Talk Title]
+,#+DATE: April 3, 2025
+,#+CATEGORY: dotJS2025
+
+* Overview
+[Brief summary of the talk]
+
+* Key Points
+- Point 1
+- Point 2
+- Point 3
+
+* Code Examples
+,#+BEGIN_SRC javascript
+// Code example from the talk
+console.log("Example code");
+,#+END_SRC
+
+* Diagrams
+,#+BEGIN_SRC mermaid :file ../diagrams/[talk-name]-diagram.svg
+graph TD
+    A[Concept A] --> B[Concept B]
+    B --> C[Concept C]
+    C --> D[Implementation]
+,#+END_SRC
+
+* Resources
+- [Link to slides]
+- [Link to speaker's GitHub/website]
+- [Other relevant resources]
+
+* Questions & Answers
+- Q: [Question asked during Q&A]
+- A: [Speaker's answer]
+
+* Personal Notes
+- [Your thoughts and insights]
+- [Implementation ideas]
+- [Follow-up topics to research]
+#+END_SRC
+
+* Getting Started with Session Tracking
+:PROPERTIES:
+:header-args: :tangle ./talks/session-tracker.org :mkdirp t
+:END:
+
+#+BEGIN_SRC org
+,#+TITLE: dotJS 2025 Session Tracking
+,#+DATE: April 3, 2025
+
+* Morning Sessions (9:30 am - 12:00 pm)
+** [ ] Ryan Dahl – Special Announcement
+   - Priority: High (Creator of Node.js and Deno)
+   - Expected focus: New JavaScript runtime or framework?
+   - Notes: [[./morning-sessions/ryan-dahl.org][Ryan Dahl Notes]]
+
+** [ ] Wes Bos – Running AI models in JavaScript - good idea?
+   - Priority: Medium
+   - Expected focus: JavaScript AI capabilities and limitations
+   - Notes: [[./morning-sessions/wes-bos.org][Wes Bos Notes]]
+
+** [ ] Sarah Drasner – The Wind and the Waves: The formation of Framework Waves from the Epicenter
+   - Priority: Medium
+   - Expected focus: JavaScript framework evolution and patterns
+   - Notes: [[./morning-sessions/sarah-drasner.org][Sarah Drasner Notes]]
+
+* Lunch Break (12:00 pm - 1:45 pm)
+** Networking Goals
+- Connect with speakers about [your specific interests]
+- Meet developers working on [relevant projects/companies]
+- Discuss [specific topics] with community members
+
+* Afternoon Sessions (1:45 pm - 6:00 pm)
+** [ ] Kyle Simpson – Love/Hate: Upgrading to Web2.5 with Local-First
+   - Priority: High (Author of "You Don't Know JS")
+   - Expected focus: Local-first applications, offline capabilities
+   - Notes: [[./afternoon-sessions/kyle-simpson.org][Kyle Simpson Notes]]
+
+** [ ] Angie Jones – Modern Day Mashups: How AI Agents are Reviving the Programmable Web
+   - Priority: Medium
+   - Expected focus: AI in web applications, new API patterns
+   - Notes: [[./afternoon-sessions/angie-jones.org][Angie Jones Notes]]
+
+** [ ] Matteo Collina – Node.js will use all the memory available, and that's OK!
+   - Priority: Medium
+   - Expected focus: Node.js memory management, performance
+   - Notes: [[./afternoon-sessions/matteo-collina.org][Matteo Collina Notes]]
+
+** [ ] Yohan Lasorsa – Prompting is the New Scripting: Meet GenAIScript
+   - Priority: Medium
+   - Expected focus: AI-driven code generation
+   - Notes: [[./afternoon-sessions/yohan-lasorsa.org][Yohan Lasorsa Notes]]
+
+** [ ] Eduardo San Martin Morote – From terrible to terrific frontend routers
+   - Priority: Medium
+   - Expected focus: Modern routing solutions
+   - Notes: [[./afternoon-sessions/eduardo-san-martin-morote.org][Eduardo San Martin Morote Notes]]
+
+* Lightning Talks
+** [ ] Antoine Caron – Supercharge Web Performance with Shared Dictionaries
+   - Notes: [[./lightning-talks/antoine-caron.org][Antoine Caron Notes]]
+
+** [ ] Joyce Lin – Code in the Physical World
+   - Notes: [[./lightning-talks/joyce-lin.org][Joyce Lin Notes]]
+
+** [ ] Charly Poly – Durable Executions for Mortals
+   - Notes: [[./lightning-talks/charly-poly.org][Charly Poly Notes]]
+
+** [ ] Abbey Perini – Coding and ADHD: Where We Excel
+   - Notes: [[./lightning-talks/abbey-perini.org][Abbey Perini Notes]]
+
+** [ ] Vadim Smirnov – Recreating Windows Media Player Art With Web MIDI API
+   - Notes: [[./lightning-talks/vadim-smirnov.org][Vadim Smirnov Notes]]
+
+* Post-Conference Action Items
+** [ ] Review and organize notes
+** [ ] Follow up with contacts made
+** [ ] Research topics of interest
+** [ ] Experiment with new technologies/frameworks
+** [ ] Share learnings with team
+#+END_SRC
+
+* Topic Model for Major Themes
+:PROPERTIES:
+:header-args: :tangle ./diagrams/topic-model.org :mkdirp t
+:END:
+
+#+BEGIN_SRC org
+,#+TITLE: dotJS 2025 Conference Topic Model
+,#+DATE: April 3, 2025
+
+* Visual Topic Model
+
+,#+BEGIN_SRC mermaid :file ./diagrams/topic-model.svg
+graph TD
+    JavaScript[JavaScript Ecosystem 2025] --> Runtimes[Runtimes & Performance]
+    JavaScript --> AI[AI Integration]
+    JavaScript --> Architecture[Modern Architecture]
+    JavaScript --> LocalFirst[Local-First & Offline]
+    JavaScript --> DevExp[Developer Experience]
+    
+    Runtimes --> NodeMemory[Node.js Memory Management]
+    Runtimes --> newRuntime[New Runtime Announcement?]
+    
+    AI --> AIModels[Running AI Models in Browser]
+    AI --> Agents[AI Agents & Web Integration]
+    AI --> GenAIScript[GenAIScript & Prompting]
+    
+    Architecture --> Routing[Frontend Routing]
+    Architecture --> Frameworks[Framework Evolution]
+    Architecture --> Web25[Web 2.5 Concepts]
+    
+    LocalFirst --> OfflineFirst[Offline-First Patterns]
+    LocalFirst --> DataSync[Data Synchronization]
+    
+    DevExp --> ADHD[Neurodiversity in Coding]
+    DevExp --> PhysicalCode[Code in Physical World]
+    DevExp --> Performance[Performance Optimization]
+    DevExp --> WebMIDI[Web MIDI API Creative Apps]
+,#+END_SRC
+
+* Conference Theme Analysis
+
+Based on the talk titles and speakers, the dotJS 2025 conference appears focused on several emerging themes:
+
+1. *AI Integration with JavaScript*: Multiple talks address AI integration, from running models directly in JavaScript to using AI for code generation and web agents.
+
+2. *Evolution of JavaScript Ecosystems*: Talks from creators like Ryan Dahl and thought leaders like Sarah Drasner suggest major announcements or insights about where JavaScript frameworks and runtimes are heading.
+
+3. *Local-First and Web 2.5*: Kyle Simpson's talk suggests a shift toward more resilient, offline-capable applications that maintain the benefits of web applications.
+
+4. *Performance Optimization*: Several talks focus on different aspects of performance, from memory management to HTTP compression techniques.
+
+5. *Developer Experience*: Talks about neurodiversity (ADHD), creative applications (MIDI), and physical computing suggest a broadening of what constitutes JavaScript development.
+
+This analysis will be updated as the conference progresses and actual content is noted.
+#+END_SRC
+
+* Practical Info and Resources
+:PROPERTIES:
+:header-args: :tangle ./resources/practical-info.org :mkdirp t
+:END:
+
+#+BEGIN_SRC org
+,#+TITLE: dotJS 2025 Practical Information
+,#+DATE: April 3, 2025
+
+* Wifi Access
+- Network: [To be filled during conference]
+- Password: [To be filled during conference]
+
+* Social Media
+- Official hashtag: #dotJS
+- Discord channel: [To be filled during conference]
+
+* Conference Materials
+- Slides will likely be published at: https://www.dotconferences.com/
+- Videos may be available after the conference
+
+* Speaker Social Media & GitHub Profiles
+
+| Speaker              | Twitter              | GitHub                 | Website                          |
+|----------------------|----------------------|------------------------|---------------------------------|
+| Ryan Dahl            | @ryahdahl            | https://github.com/ry  | https://tinyclouds.org/         |
+| Wes Bos              | @wesbos              | https://github.com/wesbos | https://wesbos.com/          |
+| Sarah Drasner        | @sarah_edo           | https://github.com/sdras | https://sarahdrasnerdesign.com/ |
+| Kyle Simpson         | @getify              | https://github.com/getify | https://me.getify.com/        |
+| Angie Jones          | @techgirl1908        | https://github.com/angiejones | https://angiejones.tech/  |
+| Matteo Collina       | @matteocollina       | https://github.com/mcollina | https://www.nearform.com/   |
+| Yohan Lasorsa        | @sinedied            | https://github.com/sinedied | -                           |
+| Eduardo San Martin M | @posva               | https://github.com/posva | https://esm.dev/               |
+
+* Local Information
+** Venue Address
+Folies Bergère
+32 rue Richer
+75009 Paris, France
+
+** Transportation
+- Nearest Metro stations: [To be filled]
+- Taxi services: [To be filled]
+
+** Nearby Food Options
+- [To be filled during conference]
+
+* Notes on Conference Features
+- Speaker Lounge: Available during breaks for Q&A with speakers
+- Social activities: "Find your JS buddy" hunt game
+- Exposition hall: Meet partners, get swag
+- Photo policy: Red lanyards available if you don't want to appear in photos
+#+END_SRC
+
+* Initial Code Example Template
+:PROPERTIES:
+:header-args: :tangle ./code-examples/initial-setup.org :mkdirp t
+:END:
+
+#+BEGIN_SRC org
+,#+TITLE: dotJS 2025 Code Examples Setup
+,#+DATE: April 3, 2025
+
+* Setup for Code Examples
+
+This file serves as a template for tracking code examples from the conference.
+
+** Basic Example Template
+
+,#+BEGIN_SRC javascript :tangle ./demos/example-template.js
+/**
+ * Example from [Speaker] - [Talk Title]
+ * dotJS 2025 - April 3, 2025
+ * 
+ * Description: [Brief description of what this code demonstrates]
+ */
+
+// Code example here
+console.log('Example dotJS 2025 code');
+
+// Export if needed
+export const exampleFunction = () => {
+  // Implementation
+};
+,#+END_SRC
+
+** Test Setup Template
+
+,#+BEGIN_SRC javascript :tangle ./demos/example-test-template.js
+/**
+ * Tests for example from [Speaker] - [Talk Title]
+ * dotJS 2025 - April 3, 2025
+ */
+
+import { exampleFunction } from './example-template.js';
+
+// Simple test
+console.log('Testing example function...');
+const result = exampleFunction();
+console.log('Result:', result);
+,#+END_SRC
+
+** Example Topics to Track
+
+Based on the conference agenda, prepare to capture examples on:
+
+- AI model integration in JavaScript
+- Local-first/offline patterns
+- Web MIDI API usage
+- Performance optimization techniques
+- New framework patterns
+- Node.js memory management
+
+Each will be captured in separate files as speakers present their material.
+#+END_SRC
