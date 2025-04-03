@@ -23,8 +23,10 @@
   "Set up the dotJS 2025 project by loading all necessary components."
   (interactive)
   (message "Setting up dotJS 2025 project environment...")
-  (load-library "org-capture-templates")
-  (message "Capture templates loaded."))
+  (dotjs-setup) ;; From config.el
+  (dotjs-setup-capture-templates) ;; From org-capture-templates.el
+  (dotjs-setup-bibliography) ;; From this file
+  (message "dotJS 2025 project environment configured."))
 
 (defun dotjs-tangle-file (file)
   "Tangle the specified org FILE."
@@ -43,7 +45,7 @@
 (defun dotjs-tangle-all-files ()
   "Tangle all org files in the project."
   (interactive)
-  (let ((files (directory-files-recursively "~/projects/aygp-dr/dotjs-2025" "\\.org$")))
+  (let ((files (directory-files-recursively dotjs-project-root "\\.org$")))
     (dolist (file files)
       (with-current-buffer (find-file-noselect file)
         (org-babel-tangle)))
@@ -52,7 +54,7 @@
 (defun dotjs-html-export ()
   "Export all org files to HTML."
   (interactive)
-  (let ((files (directory-files-recursively "~/projects/aygp-dr/dotjs-2025" "\\.org$")))
+  (let ((files (directory-files-recursively dotjs-project-root "\\.org$")))
     (dolist (file files)
       (with-current-buffer (find-file-noselect file)
         (org-html-export-to-html)))
@@ -62,7 +64,7 @@
   "Set up the bibliography for citation export."
   (interactive)
   (setq org-cite-global-bibliography 
-        '("~/projects/aygp-dr/dotjs-2025/resources/bibliography/references.bib"))
+        (list (expand-file-name "resources/bibliography/references.bib" dotjs-project-root)))
   (message "Bibliography configuration updated."))
 
 ;; Load the export functionality

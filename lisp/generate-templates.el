@@ -1,5 +1,17 @@
 ;;; generate-templates.el --- Generate org files for dotJS talks
 
+;; Author: Aidan Pace <apace@defrecord.com>
+;; Keywords: org-mode, templates, conference, notes
+;; Version: 0.1.0
+
+;;; Commentary:
+;; This file provides functions for generating Org templates for all talks
+;; at the dotJS 2025 conference.
+
+;;; Code:
+
+(require 'config)
+
 ;; Define the talks
 (setq dotjs-talks
       '(;; Morning sessions
