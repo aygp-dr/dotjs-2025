@@ -10,6 +10,9 @@
 # Generated files
 diagrams/*.svg
 diagrams/*.png
+*.html
+*.tex
+*.pdf
 
 # Emacs backup files
 *~
