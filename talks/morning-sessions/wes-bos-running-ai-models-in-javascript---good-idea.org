@@ -1,0 +1,41 @@
+#+TITLE: Wes Bos - Running AI models in JavaScript - good idea?
+#+DATE: April 3, 2025
+#+CATEGORY: dotJS2025
+#+PROPERTY: header-args :mkdirp yes
+#+PROPERTY: header-args:js :tangle ../code-examples/demos/wes-bos-running-ai-models-in-javascript---good-idea.js
+
+* Overview
+[Brief summary of the talk]
+
+* Key Points
+- Point 1
+- Point 2
+- Point 3
+
+* Code Examples
+#+BEGIN_SRC javascript
+// Code example from the talk
+console.log("Example code from Wes Bos's talk on Running AI models in JavaScript - good idea?");
+#+END_SRC
+
+* Diagrams
+#+BEGIN_SRC mermaid :file ../diagrams/wes-bos-running-ai-models-in-javascript---good-idea-diagram.svg
+graph TD
+    A[Concept A] --> B[Concept B]
+    B --> C[Concept C]
+    C --> D[Implementation]
+#+END_SRC
+
+* Resources
+- [Link to slides]
+- [Link to speaker's GitHub/website]
+- [Other relevant resources]
+
+* Questions & Answers
+- Q: [Question asked during Q&A]
+- A: [Speaker's answer]
+
+* Personal Notes
+- [Your thoughts and insights]
+- [Implementation ideas]
+- [Follow-up topics to research]

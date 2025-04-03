@@ -1,26 +1,80 @@
-#+TITLE: dotJS 2025 Notes
-#+AUTHOR: Your Name
+#+TITLE: dotJS 2025 Conference Notes
+#+AUTHOR: Aidan Pace
 #+DATE: April 3, 2025
+#+PROPERTY: header-args :mkdirp yes
+#+OPTIONS: toc:2 num:t
+#+CITE_EXPORT: csl
 
 * dotJS 2025 Conference Notes
 
-This repository contains my personal notes, resources, and code examples from the dotJS 2025 conference held on April 3, 2025 at Folies Bergère, 32 rue Richer, 75009 Paris.
+This repository contains personal notes, resources, and code examples from the dotJS 2025 conference held on April 3, 2025, at Folies Bergère, 32 rue Richer, 75009 Paris.
 
-** Directory Structure
+** Repository Structure
 
-- talks/ - Notes from conference talks
-- resources/ - Slides, links, and other resources
-- code-examples/ - Code snippets and demos from the talks
-- notes/ - Additional personal notes
-- diagrams/ - Visual representations of concepts
+- =talks/= - Notes from conference talks (morning and afternoon sessions)
+- =notes/= - Additional personal notes and lightning talk notes
+- =code-examples/= - Code snippets and demos from the talks
+- =resources/= - Slides, references, and bibliography
+- =diagrams/= - Visual representations of concepts
+- =lisp/= - Emacs Lisp utilities for working with the repository
+- =scripts/= - Shell scripts for repository setup and maintenance
 
-** Getting Started
+** Quick Start
 
-1. Clone this repository
-2. Explore the talk notes in the talks/ directory
-3. Check out code examples in the code-examples/ directory
-4. View the generated diagrams in the diagrams/ directory
+1. Run the setup script to initialize the repository:
+   #+BEGIN_SRC shell
+   ./scripts/setup.sh
+   #+END_SRC
 
-** Conference Highlights
+2. Load the Elisp environment in Emacs:
+   #+BEGIN_SRC emacs-lisp
+   (load-file "~/projects/aygp-dr/dotjs-2025/lisp/dotjs-init.el")
+   #+END_SRC
 
-[To be filled after the conference]
+3. Explore the talk notes in the =talks/= directory
+
+4. Use the tangle script to extract code from Org files:
+   #+BEGIN_SRC shell
+   # Tangle a specific file
+   ./scripts/tangle.sh talks/morning-sessions/ryan-dahl-special-announcement.org
+   
+   # Tangle all Org files
+   ./scripts/tangle.sh --all
+   
+   # Detangle (sync from source back to Org)
+   ./scripts/tangle.sh --detangle talks/morning-sessions/ryan-dahl-special-announcement.org
+   #+END_SRC
+
+** Key Features
+
+- *Org-mode Integration*: All notes use Org-mode with Babel for code execution
+- *Tangle/Detangle*: Code blocks can be extracted to standalone files and synchronized back
+- *Bibliography Support*: Citations are managed via =resources/bibliography/references.bib=
+- *Emacs Lisp Utilities*: Custom functions for working with the repository
+
+** Conference Topics
+
+The conference covers several major themes:
+
+- AI Integration with JavaScript (models, agents, code generation)
+- Modern Architecture (framework evolution, routing, Web 2.5)
+- JavaScript Runtime Advancements
+- Local-First and Offline Capabilities
+- Creative Web Applications
+
+** Important Talks
+
+- Ryan Dahl's special announcement (creator of Node.js and Deno)
+- Kyle Simpson on Local-First Web Applications [cite:@simpson2015you] [cite:@localfirst2025]
+- Wes Bos on AI models in JavaScript
+- Angie Jones on AI Agents and the Programmable Web
+
+** Citing Conference Material
+
+When referencing material from the conference in your own work, please use the bibliography provided in =resources/bibliography/references.bib=.
+
+Example citation: [cite:@resig2025jsperformance]
+
+** License
+
+Personal notes and code examples are shared for educational purposes. All material from speakers remains under their original copyright.

@@ -1,0 +1,41 @@
+#+TITLE: Sarah Drasner - The Wind and the Waves: The formation of Framework Waves from the Epicenter
+#+DATE: April 3, 2025
+#+CATEGORY: dotJS2025
+#+PROPERTY: header-args :mkdirp yes
+#+PROPERTY: header-args:js :tangle ../code-examples/demos/sarah-drasner-the-wind-and-the-waves-the-formation-of-framework-waves-from-the-epicenter.js
+
+* Overview
+[Brief summary of the talk]
+
+* Key Points
+- Point 1
+- Point 2
+- Point 3
+
+* Code Examples
+#+BEGIN_SRC javascript
+// Code example from the talk
+console.log("Example code from Sarah Drasner's talk on The Wind and the Waves: The formation of Framework Waves from the Epicenter");
+#+END_SRC
+
+* Diagrams
+#+BEGIN_SRC mermaid :file ../diagrams/sarah-drasner-the-wind-and-the-waves-the-formation-of-framework-waves-from-the-epicenter-diagram.svg
+graph TD
+    A[Concept A] --> B[Concept B]
+    B --> C[Concept C]
+    C --> D[Implementation]
+#+END_SRC
+
+* Resources
+- [Link to slides]
+- [Link to speaker's GitHub/website]
+- [Other relevant resources]
+
+* Questions & Answers
+- Q: [Question asked during Q&A]
+- A: [Speaker's answer]
+
+* Personal Notes
+- [Your thoughts and insights]
+- [Implementation ideas]
+- [Follow-up topics to research]

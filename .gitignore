@@ -38,6 +38,9 @@ var/
 .installed.cfg
 *.egg
 
+# Poetry
+poetry.lock
+
 # OS specific
 .DS_Store
 Thumbs.db

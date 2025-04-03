@@ -1,0 +1,81 @@
+#+TITLE: Template with Bibliography Support
+#+AUTHOR: Aidan Pace
+#+DATE: April 3, 2025
+#+CATEGORY: dotJS2025
+#+PROPERTY: header-args :mkdirp yes
+#+PROPERTY: header-args:js :tangle ../code-examples/demos/sample-code.js
+#+CITE_EXPORT: csl
+
+* Overview
+This is a sample template showing how to use bibliography and citations in your conference notes.
+
+* Key Points
+- Use the bibliography system for referencing external sources
+- Include citations in your notes with the cite syntax
+- Export to various formats while maintaining citation structure
+
+* Using Citations
+
+When discussing JavaScript design patterns, it's helpful to reference established works like [cite:@osmani2017learning] and [cite:@crockford2008javascript]. For modern ES6 features, Kyle Simpson's work is particularly helpful [cite:@simpson2015you].
+
+** Advanced Topics with References
+
+When discussing local-first applications, refer to the groundbreaking work by Kleppmann et al. [cite:@localfirst2025]. The recent developments in JavaScript engine performance were outlined by Resig [cite:@resig2025jsperformance].
+
+For information on memory management in Node.js, the official documentation is very helpful [cite:@nodejs2025storage].
+
+* Code Examples
+#+BEGIN_SRC javascript
+// Example of modern ES6 features from Kyle Simpson's work
+// Reference: @simpson2015you
+
+// Using destructuring
+const { name, age } = person;
+
+// Arrow functions
+const greet = (name) => `Hello, ${name}!`;
+
+// Default parameters
+function multiply(a, b = 1) {
+  return a * b;
+}
+
+// Implementing design patterns (Osmani, 2017)
+// Reference: @osmani2017learning
+class Singleton {
+  static instance;
+  
+  constructor() {
+    if (Singleton.instance) {
+      return Singleton.instance;
+    }
+    
+    Singleton.instance = this;
+  }
+}
+#+END_SRC
+
+* Bibliography
+:PROPERTIES:
+:header-args: :tangle no
+:END:
+
+This repository includes a comprehensive bibliography in =resources/bibliography/references.bib=. To use it in your own notes, include the following header in your org files:
+
+#+BEGIN_EXAMPLE
+#+CITE_EXPORT: csl
+#+END_EXAMPLE
+
+Then reference sources using the cite syntax:
+
+#+BEGIN_EXAMPLE
+[cite:@author2025title]
+#+END_EXAMPLE
+
+* Exporting
+
+When exporting to HTML, PDF, or other formats, citations will be properly formatted according to the CSL style.
+
+To export:
+1. Use C-c C-e h h for HTML export
+2. Use C-c C-e l p for LaTeX/PDF export

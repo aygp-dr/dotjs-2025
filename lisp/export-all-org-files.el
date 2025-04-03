@@ -1,0 +1,5 @@
+     (defun export-all-org-files ()
+       (interactive)
+       (dolist (file (directory-files-recursively "~/projects/aygp-dr/dotjs-2025" "\\.org$"))
+         (with-current-buffer (find-file-noselect file)
+           (org-html-export-to-html))))

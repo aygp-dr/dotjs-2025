@@ -1,0 +1,41 @@
+#+TITLE: Eduardo San Martin Morote - From terrible to terrific frontend routers
+#+DATE: April 3, 2025
+#+CATEGORY: dotJS2025
+#+PROPERTY: header-args :mkdirp yes
+#+PROPERTY: header-args:js :tangle ../code-examples/demos/eduardosanmartinmorote-fromterribletoterrificfrontendrouters.js
+
+* Overview
+[Brief summary of the talk]
+
+* Key Points
+- Point 1
+- Point 2
+- Point 3
+
+* Code Examples
+#+BEGIN_SRC javascript
+// Code example from Eduardo San Martin Morote's talk on From terrible to terrific frontend routers
+console.log("Example code");
+#+END_SRC
+
+* Diagrams
+#+BEGIN_SRC mermaid :file ../diagrams/eduardosanmartinmorote-fromterribletoterrificfrontendrouters-diagram.svg
+graph TD
+    A[Concept A] --> B[Concept B]
+    B --> C[Concept C]
+    C --> D[Implementation]
+#+END_SRC
+
+* Resources
+- [Link to slides]
+- [Link to speaker's GitHub/website]
+- [Other relevant resources]
+
+* Questions & Answers
+- Q: [Question asked during Q&A]
+- A: [Speaker's answer]
+
+* Personal Notes
+- [Your thoughts and insights]
+- [Implementation ideas]
+- [Follow-up topics to research]
