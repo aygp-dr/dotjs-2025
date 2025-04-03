@@ -11,14 +11,14 @@ This repository contains personal notes, resources, and code examples from the d
 
 ** Repository Structure
 
-- =talks/= - Notes from conference talks (morning and afternoon sessions)
-- =notes/= - Additional personal notes and lightning talk notes
-- =code-examples/= - Code snippets and demos from the talks
-- =resources/= - Slides, references, and bibliography
-- =diagrams/= - Visual representations of concepts
-- =lisp/= - Emacs Lisp utilities for working with the repository
-- =scripts/= - Helper scripts for tasks that are too complex for the Makefile
-- =Makefile= - Simple commands for common tasks (tangle, detangle, export)
+- [[file:talks/][talks/]] - Notes from conference talks (morning and afternoon sessions)
+- [[file:notes/][notes/]] - Additional personal notes and lightning talk notes
+- [[file:code-examples/][code-examples/]] - Code snippets and demos from the talks
+- [[file:resources/][resources/]] - Slides, references, and bibliography
+- [[file:diagrams/][diagrams/]] - Visual representations of concepts
+- [[file:lisp/][lisp/]] - Emacs Lisp utilities for working with the repository
+- [[file:scripts/][scripts/]] - Helper scripts for tasks that are too complex for the Makefile
+- [[file:Makefile][Makefile]] - Simple commands for common tasks (tangle, detangle, export)
 
 ** Environment
 *** Dependencies
@@ -37,7 +37,7 @@ make setup-python
 
 Run ~make~ or ~make help~ to see all available commands.
 
-Open any file in Emacs and the project settings will be automatically loaded via ~.dir-locals.el~.
+Open any file in Emacs and the project settings will be automatically loaded via [[file:.dir-locals.el][.dir-locals.el]].
 
 ** Key Features
 
@@ -67,7 +67,7 @@ The conference covers several major themes:
 
 ** Citing Conference Material
 
-When referencing material from the conference in your own work, please use the bibliography provided in =resources/bibliography/references.bib=.
+When referencing material from the conference, use the bibliography provided in [[file:resources/bibliography/references.bib][resources/bibliography/references.bib]].
 
 Example citation: [cite:@resig2025jsperformance]
 
