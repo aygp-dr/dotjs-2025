@@ -63,10 +63,7 @@ poetry install  # This will install all dependencies from the lockfile
    cd dotjs-2025
    #+END_SRC
 
-2. Load the Elisp environment in Emacs:
-   #+BEGIN_SRC emacs-lisp
-   (load-file "~/projects/aygp-dr/dotjs-2025/lisp/dotjs-init.el")
-   #+END_SRC
+2. Open any file in Emacs and the project settings will be automatically loaded via `.dir-locals.el`.
 
 3. Explore the talk notes in the =talks/= directory
 

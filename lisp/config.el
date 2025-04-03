@@ -6,27 +6,9 @@
 
 ;;; Commentary:
 ;; This file contains configuration variables for the dotJS 2025 conference notes.
+;; Used by .dir-locals.el for project-specific settings.
 
 ;;; Code:
-
-;; Project paths
-(defvar dotjs-project-root (expand-file-name "~/projects/aygp-dr/dotjs-2025")
-  "Root directory of the dotJS 2025 project.")
-
-;; Bibliography configuration
-(setq org-cite-global-bibliography 
-      `(,(expand-file-name "resources/bibliography/references.bib" dotjs-project-root)))
-
-;; Org-mode configuration
-(with-eval-after-load 'org
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((emacs-lisp . t)
-     (js . t)
-     (python . t)
-     (scheme . t)
-     (shell . t)
-     (mermaid . t))))
 
 ;; Development environment versions
 (defconst dotjs-tool-versions
@@ -38,16 +20,20 @@
     (emacs . "31.0.50"))
   "Tool versions used in the project.")
 
-;; Load specific project settings
-(defun dotjs-setup ()
-  "Set up the dotJS project environment."
-  (interactive)
-  (setq org-confirm-babel-evaluate nil)
-  (setq org-src-fontify-natively t)
-  (setq org-src-tab-acts-natively t)
-  (setq org-export-with-smart-quotes t)
-  (setq org-export-with-toc t)
-  (message "dotJS 2025 environment configured!"))
+;; Functions used for tangling and export - keep these for the Makefile
+(defun dotjs-tangle-file (file)
+  "Tangle the specified org FILE."
+  (interactive "fOrg file to tangle: ")
+  (with-current-buffer (find-file-noselect file)
+    (org-babel-tangle)
+    (message "Tangled %s" file)))
+
+(defun dotjs-detangle-file (file)
+  "Detangle the specified org FILE - sync from source back to org file."
+  (interactive "fOrg file to detangle: ")
+  (with-current-buffer (find-file-noselect file)
+    (org-babel-detangle)
+    (message "Detangled %s" file)))
 
 ;; Provide this module
 (provide 'config)
